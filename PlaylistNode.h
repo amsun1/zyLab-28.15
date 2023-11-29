@@ -1,6 +1,4 @@
-#ifndef PLAYLISTNODEH
-#define PLAYLISTNODEH
-
+#include "iostream"
 #include <string>
 
 using namespace std;
