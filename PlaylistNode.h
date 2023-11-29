@@ -12,7 +12,14 @@ class PlaylistNode {
     PlaylistNode* nextNodePtr;
 
   public:
-    PlaylistNode();
+    PlaylistNode() {
+      uniqueID = "none";
+      songName = "none";
+      artistName = "none";
+      songLength = 0;
+      nextNodePtr = 0;
+    }
+
     // TODO: parameterized constructor
 
     string GetID();
