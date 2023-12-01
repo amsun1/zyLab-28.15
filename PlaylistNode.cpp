@@ -18,7 +18,7 @@ void PlaylistNode::SetNext(PlaylistNode* nodePtr) {
   nextNodePtr = nodePtr;
 }
 
-void PrintPlaylistNode() {
+void PlaylistNode::PrintPlaylistNode() {
   cout << "Unique ID: " << uniqueID << endl;
   cout << "Song Name: " << songName << endl;
   cout << "Artist Name: " << artistName << endl;
