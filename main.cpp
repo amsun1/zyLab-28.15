@@ -16,7 +16,7 @@ void PrintMenu(const string playlistTitle) {
    cout << "t - Output total time of playlist (in seconds)" << endl;
    cout << "o - Output full playlist" << endl;
    cout << "q - Quit" << endl;
-   cout << endl << "Choose an option: ";
+   cout << endl << "Choose an option:" << endl;
 
 
    
@@ -30,7 +30,7 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
 int main() {
    string playlistTitle;
 
-   cout << "Enter playlist's title: ";
+   cout << "Enter playlist's title:" << endl << endl;
    getline(cin, playlistTitle);
 
    PlaylistNode* headNode = nullptr;
@@ -46,4 +46,3 @@ int main() {
    
    return 0;
 }
-
