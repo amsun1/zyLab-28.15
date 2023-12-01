@@ -15,7 +15,7 @@ string PlaylistNode::GetID() {return uniqueID;}
 string PlaylistNode::GetSongName() {return songName;}
 string PlaylistNode::GetArtistName() {return artistName;}
 int PlaylistNode::GetSongLength() {return songLength;}
-// TODO: PlaylistNode* PlaylistNode::GetNext() {}
+PlaylistNode* PlaylistNode::GetNext() {return nextNodePtr;}
 
 // TODO: Mutator functions
 void PlaylistNode::InsertAfter(PlaylistNode* nodePtr) {
@@ -32,6 +32,4 @@ void PlaylistNode::PrintPlaylistNode() {
   cout << "Song Name: " << songName << endl;
   cout << "Artist Name: " << artistName << endl;
   cout << "Song Length (in seconds): " << songLength << endl;
-
-
 }
