@@ -1,6 +1,15 @@
 #include "PlaylistNode.h"
 #include <iostream>
 
+// Constructor
+PlaylistNode::PlaylistNode(string userID, string userSong, string userArtist, int userSongLength) {
+  uniqueID = userID;
+  songName = userSong;
+  artistName = userArtist;
+  songLength = userSongLength;
+  nextNodePtr = 0;
+}
+
 // Accessor functions
 string PlaylistNode::GetID() {return uniqueID;}
 string PlaylistNode::GetSongName() {return songName;}
