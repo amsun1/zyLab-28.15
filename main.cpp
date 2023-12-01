@@ -17,13 +17,15 @@ void PrintMenu(const string playlistTitle) {
    cout << "o - Output full playlist" << endl;
    cout << "q - Quit" << endl;
    cout << endl << "Choose an option:" << endl;
-
-
-   
 }
 
 PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headNode) {
-   /* Type your code here */
+   if (option == 'o') {
+      cout << playlistTitle << " - OUTPUT FULL PLAYLIST" << endl;
+      if (headNode == nullptr)
+         cout << "Playlist is empty" << endl;
+   }   
+   
    return headNode;
 }
 
