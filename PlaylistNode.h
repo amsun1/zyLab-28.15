@@ -23,7 +23,7 @@ class PlaylistNode {
       nextNodePtr = 0;
     }
 
-    // TODO: parameterized constructor
+    PlaylistNode(string userId, string userSong, string userArtist, int userSongLength);
 
     string GetID();
     string GetSongName();
