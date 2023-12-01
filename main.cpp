@@ -20,6 +20,24 @@ void PrintMenu(const string playlistTitle) {
 }
 
 PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headNode) {
+   if (option == 'a') {
+      string userID, userSong, userArtist;
+      int userSongLength;
+      
+      cout << "ADD SONG" << endl;
+      cout << "Enter song's unique ID:" << endl;
+      cin >> userID;
+      cout << "Enter song's name:" << endl;
+      cin >> userSong;
+      cout << "Enter artist's name:" << endl;
+      cin >> userArtist;
+      cout << "Enter song's length (in seconds):" << endl;
+      cin >> userSongLength;
+
+      PlaylistNode* newSong = new PlaylistNode(userID, userSong, userArtist, userSongLength);
+      headNode->InsertAfter(newSong);
+   }
+   
    if (option == 'o') {
       cout << playlistTitle << " - OUTPUT FULL PLAYLIST" << endl;
       if (headNode == NULL)
