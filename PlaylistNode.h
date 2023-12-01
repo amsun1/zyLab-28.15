@@ -1,6 +1,9 @@
 #include "iostream"
 #include <string>
 
+#ifndef PLAYLISTNODE_H
+#define PLAYLISTNODE_H
+
 using namespace std;
 
 class PlaylistNode {
