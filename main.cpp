@@ -8,7 +8,7 @@
 using namespace std;
 
 void PrintMenu(const string playlistTitle) {
-   cout << playlistTitle << " PLAYLIST MENU" << endl;
+   cout << endl << playlistTitle << " PLAYLIST MENU" << endl;
    cout << "a - Add song" << endl;
    cout << "d - Remove song" << endl;
    cout << "c - Change position of song" << endl;
@@ -57,7 +57,7 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
 int main() {
    string playlistTitle;
 
-   cout << "Enter playlist's title:" << endl << endl;
+   cout << "Enter playlist's title:" << endl;
    getline(cin, playlistTitle);
 
    PlaylistNode* headNode = nullptr;
