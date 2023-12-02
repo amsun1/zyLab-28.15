@@ -22,10 +22,12 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
    if (option == 'a') {
       string userID, userSong, userArtist;
       int userSongLength;
+      PlaylistNode* currNode = NULL;
+      PlaylistNode* lastNode = headNode;
       
       cout << "ADD SONG" << endl;
       cout << "Enter song's unique ID:" << endl;
-      cin >> userID;
+      getline(cin, userID);
       cout << "Enter song's name:" << endl;
       cin >> userSong;
       cout << "Enter artist's name:" << endl;
@@ -33,8 +35,13 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
       cout << "Enter song's length (in seconds):" << endl;
       cin >> userSongLength;
 
-      PlaylistNode* newSong = new PlaylistNode(userID, userSong, userArtist, userSongLength);
-      headNode->InsertAfter(newSong);
+      if (headNode == NULL)
+         headNode = new PlaylistNode(userID, userSong, userArtist, userSongLength);
+      else {
+         currNode = new PlaylistNode(userID, userSong, userArtist, userSongLength);
+         lastNode->InsertAfter(currNode);
+         lastNode = currNode;
+      }
    }
    
    if (option == 'o') {
