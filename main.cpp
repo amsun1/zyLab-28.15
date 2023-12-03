@@ -18,6 +18,10 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
    if (option == 'a') {
       string userID, userSong, userArtist;
       int userSongLength;
+      
+      if (headNode == nullptr)
+         headNode = new PlaylistNode();
+      
       PlaylistNode* currNode = nullptr;
       PlaylistNode* lastNode = headNode;
 
@@ -34,13 +38,9 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
       cout << "Enter song's length (in seconds):" << endl;
       cin >> userSongLength;
 
-      if (headNode == nullptr)
-         headNode = new PlaylistNode(userID, userSong, userArtist, userSongLength);
-      else {
-         currNode = new PlaylistNode(userID, userSong, userArtist, userSongLength);
-         lastNode->InsertAfter(currNode);
-         lastNode = currNode;
-      }
+      currNode = new PlaylistNode(userID, userSong, userArtist, userSongLength);
+      lastNode->InsertAfter(currNode);
+      lastNode = currNode;
    }
 
    if (option == 'd') {
@@ -163,6 +163,7 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
       } else {
          int position = 1;
          PlaylistNode* currNode = headNode;
+         currNode = currNode->GetNext();
          while (currNode != nullptr) {
             cout << position << "." << endl;
             currNode->PrintPlaylistNode();
@@ -183,7 +184,7 @@ int main() {
    cout << "Enter playlist's title:" << endl;
    getline(cin, playlistTitle);
 
-   PlaylistNode* headNode = nullptr;
+   PlaylistNode* headNode = NULL;
 
    char option;
    do {
