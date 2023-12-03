@@ -158,18 +158,18 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
 
    if (option == 'o') {
       cout << playlistTitle << " - OUTPUT FULL PLAYLIST" << endl;
-      if (headNode == nullptr)
+      if (headNode == nullptr) {
          cout << "Playlist is empty" << endl;
-      else {
+      } else {
          int position = 1;
          PlaylistNode* currNode = headNode;
          while (currNode != nullptr) {
             cout << position << "." << endl;
             currNode->PrintPlaylistNode();
             currNode = currNode->GetNext();
+            position++;
             if (currNode != nullptr)
                cout << endl;
-            position++;
          }
       }
    }
@@ -192,24 +192,7 @@ int main() {
       cin >> option;
       cin.ignore();
 
-      if (option == 'o') {
-         cout << playlistTitle << " - OUTPUT FULL PLAYLIST" << endl;
-         if (headNode == nullptr) {
-            cout << "Playlist is empty" << endl;
-         } else {
-            int position = 1;
-            PlaylistNode* currNode = headNode;
-            while (currNode != nullptr) {
-               cout << position << "." << endl;
-               currNode->PrintPlaylistNode();
-               cout << endl;
-               currNode = currNode->GetNext();
-               position++;
-            }
-         }
-      } else {
-         headNode = ExecuteMenu(option, playlistTitle, headNode);
-      }
+      headNode = ExecuteMenu(option, playlistTitle, headNode);
    } while (option != 'q');
 
    return 0;
