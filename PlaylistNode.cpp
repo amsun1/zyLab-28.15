@@ -31,5 +31,5 @@ void PlaylistNode::PrintPlaylistNode() {
   cout << "Unique ID: " << uniqueID << endl;
   cout << "Song Name: " << songName << endl;
   cout << "Artist Name: " << artistName << endl;
-  cout << "Song Length (in seconds): " << songLength << endl;
+  cout << "Song Length (in seconds): " << songLength;
 }
