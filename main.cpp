@@ -1,4 +1,4 @@
-//https://github.com/amsun1/zyLab-28.15/
+//https://github.com/amsun1/zyLab-28.15
 //Amanda Sun, Bonita Davis
 
 #include <iostream>
