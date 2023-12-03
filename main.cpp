@@ -130,18 +130,17 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
       cout << "OUTPUT SONGS BY SPECIFIC ARTIST" << endl;
       string artistName;
       cout << "Enter artist's name:" << endl;
-      cin.ignore();
       getline(cin, artistName);
 
       int position = 1;
       PlaylistNode* currNode = headNode;
+      currNode = currNode->GetNext();
       while (currNode != nullptr) {
          if (currNode->GetArtistName() == artistName) {
-            cout << position << "." << endl;
+            cout << endl << position << "." << endl;
             currNode->PrintPlaylistNode();
-            cout << endl;
-            position++;
          }
+         position++;
          currNode = currNode->GetNext();
       }
    }
