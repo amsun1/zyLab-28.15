@@ -24,6 +24,10 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
       
       PlaylistNode* currNode = nullptr;
       PlaylistNode* lastNode = headNode;
+      
+      while (lastNode->GetNext() != nullptr) {
+         lastNode = lastNode->GetNext();
+      }
 
       cout << "ADD SONG" << endl;
       cout << "Enter song's unique ID:" << endl;
@@ -40,7 +44,6 @@ PlaylistNode* ExecuteMenu(char option, string playlistTitle, PlaylistNode* headN
 
       currNode = new PlaylistNode(userID, userSong, userArtist, userSongLength);
       lastNode->InsertAfter(currNode);
-      lastNode = currNode;
    }
 
    if (option == 'd') {
